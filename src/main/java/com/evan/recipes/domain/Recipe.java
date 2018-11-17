@@ -1,12 +1,14 @@
 package com.evan.recipes.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@EqualsAndHashCode(exclude = {"ingredients"})
 @Entity
 public class Recipe {
     @Id

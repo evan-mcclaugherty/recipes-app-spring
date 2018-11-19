@@ -7,8 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Notes {
+public class UnitOfMeasureCommand {
     private Long id;
-    private Recipe recipe;
-    private String recipeNotes;
+    private String description;
 }

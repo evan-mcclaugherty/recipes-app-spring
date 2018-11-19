@@ -23,8 +23,14 @@
 
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-md-11 ">
-                            <h1 class="panel-title">Ingredients</h1>
+                        <div class="row">
+                            <div class="col-md-11 ">
+                                <h1 class="panel-title">Ingredients</h1>
+                            </div>
+                            <div class="col-md-1">
+                                <a class="btn btn-default" href="#"
+                                   th:href="@{'/recipe/ingredients/new/' + ${recipe.id}}" role="button">New</a>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <a class="btn btn-default" href="#" th:href="@{'/recipe/ingredients/new/' + ${recipe.id}}"

@@ -14,36 +14,25 @@
     <script crossorigin="anonymous" th:src="@{/webjars/bootstrap/4.1.3/js/bootstrap.min.js}"></script>
 </head>
 <body>
-<!--/*@thymesVar id="recipe" type="com.evan.recipes.domain.Recipe"*/-->
-<!--/*@thymesVar id="ingredients" type="java.util.Set<com.evan.recipes.commands.IngredientCommand>"*/-->
+<!--/*@thymesVar id="ingredient" type="com.evan.recipes.commands.IngredientCommand"*/-->
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
 
                 <div class="panel-heading">
-                    <h1 class="panel-title">Ingredients</h1>
+                    <h1 class="panel-title">Ingredient</h1>
                 </div>
                 <div class="panel-body">
 
-                    <div class="table-responsive" th:if="${not #lists.isEmpty(recipe.ingredients)}">
+                    <div class="table-responsive">
                         <table class="table table-hover ">
                             <thead class="thead-inverse">
                             <tr>
                                 <th>ID</th>
                                 <th>Description</th>
-                                <th>View</th>
-                                <th>Update</th>
-                                <th>Delete</th>
                             </tr>
                             </thead>
-                            <tr th:remove="all">
-                                <td>123</td>
-                                <td>Tasty Goodnees 1</td>
-                                <td><a href="#">View</a></td>
-                                <td><a href="#">Update</a></td>
-                                <td><a href="#">Delete</a></td>
-                            </tr>
                             <tr th:remove="all">
                                 <td>12333</td>
                                 <td>Tasty Goodnees 2</td>
@@ -51,19 +40,10 @@
                                 <td><a href="#">Update</a></td>
                                 <td><a href="#">Delete</a></td>
                             </tr>
-                            <tr th:each="ingredient : ${recipe.ingredients}">
+                            <tr>
                                 <td th:text="${ingredient.id}">334</td>
-                                <td th:text="${ingredient.amount} + ' ' + ${ingredient.uom.getDescription()} + ' ' + ${ingredient.description} + '/show'">
+                                <td th:text="${ingredient.amount} + ' ' + ${ingredient.uom.getDescription()} + ' ' + ${ingredient.description}">
                                     Tasty Goodnees 3
-                                </td>
-                                <td><a href="#"
-                                       th:href="@{'/recipe/ingredients/show/' + ${recipe.id} + '/' + ${ingredient.id}}">View</a>
-                                </td>
-                                <td><a href="#"
-                                       th:href="@{'/recipe/ingredients/update/' + ${recipe.id} + '/' + ${ingredient.id}}">Update</a>
-                                </td>
-                                <td><a href="#"
-                                       th:href="@{'/recipe/ingredients/delete' + ${recipe.id} + '/' + ${ingredient.id}}">Delete</a>
                                 </td>
                             </tr>
                         </table>
